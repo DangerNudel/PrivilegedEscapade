@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "hostname": "runsc",
+    "os": "linux",
+    "arch": "amd64",
+    "user": "root",
+    "timestamp": "2026-03-10T12:18:31Z",
+    "duration": "2m38.437515138s"
+  },
+  "summary": {
+    "total_findings": 34,
+    "critical": 14,
+    "high": 8,
+    "medium": 6,
+    "low": 2,
+    "info": 4
+  },
+  "modules": [
+    {
+      "module": "SUID/SGID Binary Analysis",
+      "duration": "1m2.485387376s",
+      "findings": [
+        {
+          "technique_id": "T1548.001",
+          "technique": "Abuse Elevation Control Mechanism",
+          "sub_technique": "Setuid and Setgid",
+          "severity": "CRITICAL",
+          "detail": "Dangerous SUID binary found: /usr/bin/mount",
+          "evidence": "mount can be abused to mount attacker-controlled filesystems",
+          "remediation": "Remove SUID bit: chmod u-s /usr/bin/mount (if not required)",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1548.001",
+          "technique": "Abuse Elevation Control Mechanism",
+          "sub_technique": "Setuid and Setgid",
+          "severity": "INFO",
+          "detail": "Total: 11 SUID binaries, 4 SGID binaries found on system",
+          "evidence": "Full enumeration complete",
+          "remediation": "",
+          "risk_score": 10
+        }
+      ]
+    },
+    {
+      "module": "Sudo Configuration Analysis",
+      "duration": "1.185817ms",
+      "findings": null
+    },
+    {
+      "module": "Kernel \u0026 Exploit Vector Analysis",
+      "duration": "54.650728ms",
+      "findings": [
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "INFO",
+          "detail": "Kernel version: 4.4.0 | Architecture: amd64",
+          "evidence": "Baseline information for kernel vulnerability assessment",
+          "remediation": "",
+          "risk_score": 10
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "CRITICAL",
+          "detail": "[CVE-2022-0847] DirtyPipe - Overwrite data in arbitrary read-only files, leading to privilege escalation",
+          "evidence": "Affected versions: 5.8 to 5.16.10 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2022-0847",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "CRITICAL",
+          "detail": "[CVE-2021-4034] PwnKit - pkexec local privilege escalation via crafted environment",
+          "evidence": "Affected versions: all to all | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2021-4034",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "CRITICAL",
+          "detail": "[CVE-2021-3493] OverlayFS PrivEsc - Unprivileged user namespace overlayfs escalation (Ubuntu)",
+          "evidence": "Affected versions: 4.0 to 5.11 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2021-3493",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "HIGH",
+          "detail": "[CVE-2022-2588] RouteAdvt - Use-after-free in route4 filter leading to privilege escalation",
+          "evidence": "Affected versions: 4.0 to 5.19 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2022-2588",
+          "risk_score": 75
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "CRITICAL",
+          "detail": "[CVE-2022-34918] Netfilter nft_set - Heap buffer overflow in nf_tables leading to privilege escalation",
+          "evidence": "Affected versions: 5.8 to 5.18.9 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2022-34918",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "CRITICAL",
+          "detail": "[CVE-2022-0185] FSContext Heap Overflow - Integer underflow in fs_context.c leading to heap overflow",
+          "evidence": "Affected versions: 5.1 to 5.16.1 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2022-0185",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "HIGH",
+          "detail": "[CVE-2023-0386] OverlayFS Copy-Up - UID/GID mapping bypass in overlayfs copy-up",
+          "evidence": "Affected versions: 5.11 to 6.2 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2023-0386",
+          "risk_score": 75
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "CRITICAL",
+          "detail": "[CVE-2023-32233] Netfilter nf_tables - Use-after-free in nf_tables batch processing",
+          "evidence": "Affected versions: 5.0 to 6.3.1 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2023-32233",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "HIGH",
+          "detail": "[CVE-2023-2640] GameOver(lay) - OverlayFS privilege escalation (Ubuntu specific)",
+          "evidence": "Affected versions: 5.15 to 6.2 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2023-2640",
+          "risk_score": 75
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "HIGH",
+          "detail": "[CVE-2023-3269] StackRot - Use-after-free in maple tree VMA management",
+          "evidence": "Affected versions: 6.1 to 6.4.1 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2023-3269",
+          "risk_score": 75
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "CRITICAL",
+          "detail": "[CVE-2023-4911] Looney Tunables - glibc ld.so buffer overflow via GLIBC_TUNABLES",
+          "evidence": "Affected versions: all to all | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2023-4911",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "CRITICAL",
+          "detail": "[CVE-2024-1086] nf_tables Use-After-Free - Privilege escalation via nf_tables verdict handling",
+          "evidence": "Affected versions: 5.14 to 6.7.1 | Current: 4.4.0 | VERIFY MANUALLY",
+          "remediation": "Update kernel to latest patched version. Check: https://nvd.nist.gov/vuln/detail/CVE-2024-1086",
+          "risk_score": 95
+        },
+        {
+          "technique_id": "T1068",
+          "technique": "Exploitation for Privilege Escalation",
+          "severity": "MEDIUM",
+          "detail": "Compilation tools available on system",
+          "evidence": "Found: /usr/bin/gcc, /usr/bin/cc, /usr/bin/g++, /usr/bin/make, /usr/bin/as, /usr/bin/ld",
+          "remediation": "Remove compilers from production systems to impede exploit compilation",
+          "risk_score": 40
+        }
+      ]
+    },
+    {
+      "module": "Scheduled Task \u0026 Cron Analysis",
+      "duration": "15.707452ms",
+      "findings": [
+        {
+          "technique_id": "T1053.003",
+          "technique": "Scheduled Task/Job",
+          "sub_technique": "Cron",
+          "severity": "MEDIUM",
+          "detail": "No cron access control files found",
+          "evidence": "Neither /etc/cron.allow nor /etc/cron.deny exists - all users can schedule cron jobs",
+          "remediation": "Create /etc/cron.allow with authorized users only",
+          "risk_score": 50
+        }
+      ]
+    },
+    {
+      "module": "System Service \u0026 Daemon Analysis",
+      "duration": "95.352047ms",
+      "findings": [
+        {
+          "technique_id": "T1543.002",
+          "technique": "Create or Modify System Process",
+          "sub_technique": "Systemd Service",
+          "severity": "CRITICAL",
+          "detail": "World-writable systemd service: /usr/lib/systemd/system/cryptdisks-early.service",
+          "evidence": "Permissions: Dcrw-rw-rw-",
+          "remediation": "chmod 0644 /usr/lib/systemd/system/cryptdisks-early.service",
+          "risk_score": 90
+        },
+        {
+          "technique_id": "T1543.002",
+          "technique": "Create or Modify System Process",
+          "sub_technique": "Systemd Service",
+          "severity": "CRITICAL",
+          "detail": "World-writable systemd service: /usr/lib/systemd/system/cryptdisks.service",
+          "evidence": "Permissions: Dcrw-rw-rw-",
+          "remediation": "chmod 0644 /usr/lib/systemd/system/cryptdisks.service",
+          "risk_score": 90
+        },
+        {
+          "technique_id": "T1543.002",
+          "technique": "Create or Modify System Process",
+          "sub_technique": "Systemd Service",
+          "severity": "MEDIUM",
+          "detail": "Service explicitly runs as root: e2scrub@.service",
+          "evidence": "User=root",
+          "remediation": "Consider running the service with a dedicated non-root user",
+          "risk_score": 40
+        },
+        {
+          "technique_id": "T1543.002",
+          "technique": "Create or Modify System Process",
+          "sub_technique": "Systemd Service",
+          "severity": "MEDIUM",
+          "detail": "Service explicitly runs as root: e2scrub_reap.service",
+          "evidence": "User=root",
+          "remediation": "Consider running the service with a dedicated non-root user",
+          "risk_score": 40
+        },
+        {
+          "technique_id": "T1543.002",
+          "technique": "Create or Modify System Process",
+          "sub_technique": "Systemd Service",
+          "severity": "CRITICAL",
+          "detail": "World-writable systemd service: /usr/lib/systemd/system/hwclock.service",
+          "evidence": "Permissions: Dcrw-rw-rw-",
+          "remediation": "chmod 0644 /usr/lib/systemd/system/hwclock.service",
+          "risk_score": 90
+        },
+        {
+          "technique_id": "T1543.002",
+          "technique": "Create or Modify System Process",
+          "sub_technique": "Systemd Service",
+          "severity": "MEDIUM",
+          "detail": "Service explicitly runs as root: packagekit.service",
+          "evidence": "User=root",
+          "remediation": "Consider running the service with a dedicated non-root user",
+          "risk_score": 40
+        },
+        {
+          "technique_id": "T1543.002",
+          "technique": "Create or Modify System Process",
+          "sub_technique": "Systemd Service",
+          "severity": "CRITICAL",
+          "detail": "World-writable systemd service: /usr/lib/systemd/system/x11-common.service",
+          "evidence": "Permissions: Dcrw-rw-rw-",
+          "remediation": "chmod 0644 /usr/lib/systemd/system/x11-common.service",
+          "risk_score": 90
+        }
+      ]
+    },
+    {
+      "module": "Execution Flow Hijacking Analysis",
+      "duration": "1m35.703810929s",
+      "findings": null
+    },
+    {
+      "module": "Container Escape \u0026 Environment Analysis",
+      "duration": "23.705518ms",
+      "findings": [
+        {
+          "technique_id": "T1611",
+          "technique": "Escape to Host",
+          "severity": "HIGH",
+          "detail": "User is member of privileged group: root",
+          "evidence": "Root group membership may grant additional privileges",
+          "remediation": "Remove user from root group if not required: gpasswd -d $USER root",
+          "risk_score": 75
+        },
+        {
+          "technique_id": "T1611",
+          "technique": "Escape to Host",
+          "severity": "CRITICAL",
+          "detail": "Writable sensitive proc file: /proc/sysrq-trigger",
+          "evidence": "Can potentially be used for container escape",
+          "remediation": "Use read-only /proc mount or restrict access with AppArmor/SELinux",
+          "risk_score": 85
+        }
+      ]
+    },
+    {
+      "module": "Account \u0026 Credential Analysis",
+      "duration": "55.525433ms",
+      "findings": [
+        {
+          "technique_id": "T1078",
+          "technique": "Valid Accounts",
+          "severity": "INFO",
+          "detail": "Current user: root (UID: 0, GID: 0)",
+          "evidence": "uid=0(root) gid=0(root) groups=0(root)",
+          "remediation": "",
+          "risk_score": 10
+        },
+        {
+          "technique_id": "T1078",
+          "technique": "Valid Accounts",
+          "severity": "INFO",
+          "detail": "Already running as root (UID 0)",
+          "evidence": "No privilege escalation needed - already at maximum privilege level",
+          "remediation": "",
+          "risk_score": 10
+        },
+        {
+          "technique_id": "T1078.003",
+          "technique": "Valid Accounts",
+          "sub_technique": "Local Accounts",
+          "severity": "HIGH",
+          "detail": "Current user can read /etc/shadow",
+          "evidence": "Permissions: -rw-r----- | Password hashes are exposed",
+          "remediation": "chmod 0640 /etc/shadow; chown root:shadow /etc/shadow",
+          "risk_score": 90
+        },
+        {
+          "technique_id": "T1078.003",
+          "technique": "Valid Accounts",
+          "sub_technique": "Local Accounts",
+          "severity": "HIGH",
+          "detail": "Weak or legacy password hash for user: systemd-network",
+          "evidence": "Password may use DES or other weak hashing algorithm",
+          "remediation": "Force password change for systemd-network with a modern algorithm",
+          "risk_score": 70
+        },
+        {
+          "technique_id": "T1078.003",
+          "technique": "Valid Accounts",
+          "sub_technique": "Local Accounts",
+          "severity": "HIGH",
+          "detail": "Weak or legacy password hash for user: polkitd",
+          "evidence": "Password may use DES or other weak hashing algorithm",
+          "remediation": "Force password change for polkitd with a modern algorithm",
+          "risk_score": 70
+        },
+        {
+          "technique_id": "T1078",
+          "technique": "Valid Accounts",
+          "severity": "MEDIUM",
+          "detail": "Readable sensitive file: /etc/fstab",
+          "evidence": "Filesystem table (may contain credentials for CIFS/NFS mounts)",
+          "remediation": "Restrict access to /etc/fstab",
+          "risk_score": 50
+        },
+        {
+          "technique_id": "T1078.003",
+          "technique": "Valid Accounts",
+          "sub_technique": "Local Accounts",
+          "severity": "LOW",
+          "detail": "World/group-readable home directory: /home/claude",
+          "evidence": "Permissions: drwxr-xr-x",
+          "remediation": "chmod 0750 /home/claude",
+          "risk_score": 30
+        },
+        {
+          "technique_id": "T1078.003",
+          "technique": "Valid Accounts",
+          "sub_technique": "Local Accounts",
+          "severity": "LOW",
+          "detail": "World/group-readable home directory: /home/ubuntu",
+          "evidence": "Permissions: drwxr-x---",
+          "remediation": "chmod 0750 /home/ubuntu",
+          "risk_score": 30
+        }
+      ]
+    },
+    {
+      "module": "Shell \u0026 Event-Triggered Execution Analysis",
+      "duration": "1.739758ms",
+      "findings": null
+    }
+  ]
+}
